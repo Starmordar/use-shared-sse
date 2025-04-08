@@ -29,12 +29,12 @@ function SseExample() {
     ],
   });
 
-  function onPingEvent(event: MessageEvent['data']) {
-    console.log('Ping event:', event);
+  function onPingEvent(data: MessageEvent['data']) {
+    console.log('Ping:', data);
   }
 
-  function onHeroReceiveEvent(event: MessageEvent['data']) {
-    console.log('Hero received:', event);
+  function onHeroReceiveEvent(data: MessageEvent['data']) {
+    console.log('Hero:', data);
   }
 
   return <></>;

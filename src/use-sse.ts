@@ -68,7 +68,7 @@ function useSse({
     if (broadcastChannel.current === null) {
       broadcastChannel.current = new BroadcastChannel(channelName);
     }
-
+ 
     broadcastChannel.current.onmessage = ({ data: { name, data } }: MessageEvent) => {
       const handler = events.find((evt) => evt.name === name);
       return handler?.cb(data);
