@@ -1,1 +1,1 @@
-export { useServerEvents } from './user-server-events';
+export { useSse } from './user-server-events';
