@@ -1,0 +1,43 @@
+{
+  "name": "use-shared-sse",
+  "version": "1.0.0",
+  "description": "React hook for sharing Server-Sent Events across tabs using BroadcastChannel and Web Locks.",
+  "main": "dist/index.esm.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "react-hook",
+    "sse",
+    "server-sent-events",
+    "eventsource",
+    "multitab",
+    "broadcastchannel",
+    "web-locks",
+    "shared-connection",
+    "cross-tab",
+    "react-sse"
+  ],
+  "author": "Roman Borovik",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/react": "^19.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  }
+}
