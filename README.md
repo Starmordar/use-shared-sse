@@ -1,12 +1,12 @@
 # use-shared-sse
 
-> 🔄 React hook to share a single Server-Sent Events (SSE) connection across multiple browser tabs using BroadcastChannel and Web Locks.  
-> ✅ Helps avoid browser HTTP/1.1 connection limits by ensuring only one active SSE connection across all tabs.
-
 ![minzipped size](https://badgen.net/bundlephobia/minzip/use-shared-sse)
 ![Types](https://badgen.net/badge/TS/TypeScript/blue)
 [![npm version](https://badgen.net/npm/v/use-shared-sse)](https://www.npmjs.com/package/use-shared-sse)
 ![License](https://badgen.net/npm/license/use-shared-sse)
+
+> 🔄 React hook to share a single Server-Sent Events (SSE) connection across multiple browser tabs using BroadcastChannel and Web Locks.  
+> ✅ Helps avoid browser HTTP/1.1 connection limits by ensuring only one active SSE connection across all tabs.
 
 ## 📦 Installation
 
