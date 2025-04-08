@@ -1,6 +1,6 @@
 {
   "name": "use-shared-sse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React hook for sharing Server-Sent Events across tabs using BroadcastChannel and Web Locks.",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
