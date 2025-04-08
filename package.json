@@ -21,7 +21,18 @@
     "cross-tab",
     "react-sse"
   ],
-  "author": "Roman Borovik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Starmordar/use-shared-sse"
+  },
+  "bugs": {
+    "url": "https://github.com/Starmordar/use-shared-sse/issues"
+  },
+  "homepage": "https://github.com/Starmordar/use-shared-sse#readme",
+  "author": {
+    "name": "Roman Borovik",
+    "url": "https://github.com/Starmordar"
+  },
   "type": "module",
   "license": "MIT",
   "scripts": {
