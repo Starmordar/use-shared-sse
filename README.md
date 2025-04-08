@@ -1,15 +1,60 @@
 # use-shared-sse
 
-> 🔄 React hook to share a single Server-Sent Events (SSE) connection across multiple browser tabs using BroadcastChannel and Web Locks.
+> 🔄 React hook to share a single Server-Sent Events (SSE) connection across multiple browser tabs using BroadcastChannel and Web Locks.  
+> ✅ Helps avoid browser HTTP/1.1 connection limits by ensuring only one active SSE connection across all tabs.
 
-## ✨ Features
-
-- 📡 Uses a single SSE connection across tabs
-- 📢 Shares messages using `BroadcastChannel`
-- 🔒 Ensures only one tab maintains the connection via `navigator.locks`
-- ⚛️ Built with React hooks
+![minzipped size](https://badgen.net/bundlephobia/minzip/use-shared-sse)
+![Types](https://badgen.net/badge/TS/TypeScript/blue)
+[![npm version](https://badgen.net/npm/v/use-shared-sse)](https://www.npmjs.com/package/use-shared-sse)
+![License](https://badgen.net/npm/license/use-shared-sse)
 
 ## 📦 Installation
 
 ```bash
 npm install use-shared-sse
+```
+
+## 🚀 Quick Start
+
+```tsx
+import { useSse } from 'use-shared-sse';
+
+function SseExample() {
+  useSse({
+    url: 'http://localhost:3005/sse',
+    options: { withCredentials: true },
+    events: [
+      { name: 'ping', cb: onPingEvent },
+      { name: 'hero', cb: onHeroReceiveEvent },
+    ],
+  });
+
+  function onPingEvent(event: MessageEvent['data']) {
+    console.log('Ping event:', event);
+  }
+
+  function onHeroReceiveEvent(event: MessageEvent['data']) {
+    console.log('Hero received:', event);
+  }
+
+  return <></>;
+}
+```
+
+## 📚 API Reference
+
+### `useSse(options: UseSseOptions)`
+
+React hook that manages a shared SSE connection across browser tabs using `BroadcastChannel` and `Web Locks`.
+
+---
+
+### `UseSseOptions`
+
+| Field         | Type                                           | Required | Description |
+|---------------|------------------------------------------------|----------|-------------|
+| `url`         | `string \| URL`                                | ✅ Yes   | The URL to open the SSE connection to. |
+| `options`     | `EventSourceInit`                              | No       | SSE configuration object. Default is `{ withCredentials: true }`. See [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/EventSource/EventSource#options). |
+| `events`      | `{ name: string; cb: (event: MessageEvent) => void }[]` | ✅ Yes   | A list of event listeners, each with an event name and handler. |
+| `channelName` | `string`                                       | No       | Custom name for the `BroadcastChannel`. Default: `"sse-channel"`. |
+| `lockName`    | `string`                                       | No       | Custom name for the `Web Lock`. Default: `"sse-lock"`. |
